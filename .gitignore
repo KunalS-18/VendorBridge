@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+chroma_data/
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+.env.local
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local-only, not part of the app
+Supabase pass.txt
+VendorBridge UI Design System.zip
+ui-design-system/
