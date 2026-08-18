@@ -1,5 +1,5 @@
 from chromadb import PersistentClient
-from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
 
 from app.core.config import settings
 
@@ -35,7 +35,10 @@ SEED_COMPARABLES = [
 ]
 
 _client = PersistentClient(path=settings.chroma_persist_dir)
-_embedding_fn = SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
+# ONNX-runtime build of all-MiniLM-L6-v2 bundled with chromadb itself — same
+# local/free/no-API-key embedding model, without pulling in full PyTorch
+# (which OOMs on Render's 512MB free-tier instance).
+_embedding_fn = DefaultEmbeddingFunction()
 
 
 def get_collection():

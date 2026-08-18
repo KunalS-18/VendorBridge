@@ -6,7 +6,6 @@ pydantic-settings
 python-dotenv
 
 chromadb
-sentence-transformers
 
 # for later phase: GPT-4o-mini re-ranking (Stage 3, not yet implemented)
 openai
